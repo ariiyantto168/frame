@@ -7,6 +7,7 @@ use App\Models\Products;
 use App\Models\Categories;
 use App\Models\Images;
 use Image;
+use File;
 use Illuminate\Support\Str;
 
 class ProductsController extends Controller
@@ -149,6 +150,9 @@ class ProductsController extends Controller
         $updateProducts->type = $request->type;
         $updateProducts->description = $request->description;
         $updateProducts->save();
+
+         //save update image
+         
 
         $updateProducts->categories()->sync($request->cat); 
         
