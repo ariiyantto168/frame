@@ -43,3 +43,7 @@ Route::get('/products/update/{product}', 'ProductsController@update_page')->name
 Route::post('/products/update/{product}', 'ProductsController@update_save')->name('edit');
 Route::delete('/products/delete/{product}', 'ProductsController@delete')->name('delete');
 Route::get('/products/show/{slug}', 'ProductsController@show')->name('create');
+
+
+// productuser
+Route::get('/productuser', 'Frontend\ProductuserController@index')->name('index');

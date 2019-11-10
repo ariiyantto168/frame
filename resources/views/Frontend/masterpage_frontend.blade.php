@@ -89,57 +89,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</ul>
 					</div>
 				</section>
-				<!-- flexSlider -->
-            <script defer src="{{asset('bingkai/js/jquery.flexslider.js')}}"></script>
-					<script type="text/javascript">
-					$(window).load(function(){
-					  $('.flexslider').flexslider({
-						animation: "slide",
-						start: function(slider){
-						  $('body').removeClass('loading');
-						}
-					  });
-					});
-				  </script>
-				<!-- //flexSlider -->
 			</div>
 		</div>
 	</div>
 <!-- //banner -->
 <!-- banner-bottom -->
-	<div class="banner-bottom-agileits">
-		<div class="container">
-			<div class="col-md-3 bottom1">
-				<div class="bottom-agileinfo">
-					<h3>Sit Amet </h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. laoreet nibh at ligula pharetra.</p>				
-					<a href=""><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
-				</div>
-			</div>
-			<div class="col-md-3 bottom2">
-				<div class="bottom-w3-agileits">
-					<h3>Dolor sit </h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. laoreet nibh at ligula pharetra.</p>				
-					<a href=""><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
-				</div>
-			</div>
-			<div class="col-md-3 bottom3">
-				<div class="bottom-agile">
-					<h3>Ut laoreet</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. laoreet nibh at ligula pharetra.</p>				
-					<a href=""><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
-				</div>
-			</div>
-			<div class="col-md-3 bottom4">
-				<div class="bottom-w3-agile">
-					<h3>At ligula </h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. laoreet nibh at ligula pharetra.</p>				
-					<a href=""><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
+	{!!$pagecontent!!}
 <!-- //banner-bottom -->
 <!-- content -->
 <div class="process all_pad agileits">
@@ -314,7 +269,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>	
 <!-- for bootstrap working -->
 <script src="{{asset('bingkai/js/bootstrap.js')}}"></script>
-
+<!-- flexSlider -->
+<script defer src="{{asset('bingkai/js/jquery.flexslider.js')}}"></script>
+<script type="text/javascript">
+    $(window).load(function(){
+    $('.flexslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+             $('body').removeClass('loading');
+                    }
+                  });
+                });
+</script>
+<!-- //flexSlider -->
 <!-- //for bootstrap working -->
 <!-- whatsapp floating button -->
 	<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>

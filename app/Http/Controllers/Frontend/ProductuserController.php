@@ -5,18 +5,18 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class ProductuserController extends Controller
 {
     public function index()
     {
         $contents = [
-
+           
         ];
-        $pagecontent = view('Frontend.home.index');
+        // return $contents;
+        $pagecontent = view('Frontend.productsuser.index', $contents);
 
-        // masterpage
         $pagemain = array(
-            'title' => 'Home',
+            'title' => 'Product user',
             // 'menu' => 'master',
             // 'submenu' => 'categories',
             'pagecontent' => $pagecontent
