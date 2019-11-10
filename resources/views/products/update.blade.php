@@ -24,6 +24,19 @@
                   <div class="box-body">
                     {{ Form::open(array('url' => 'products/update/'.$products->idproducts, 'class' => 'form-horizontal')) }}
                     <div class="form-group">
+                      <label class="col-sm-2 control-label">Categories</label>
+                      <div class="col-sm-5">
+                        <select name="cat[]" class="form-control select2" multiple="multiple">
+                          @foreach ($categories as $categorie)
+                            <option value="{{$categorie->idcategories}}" @if (in_array($categorie->idcategories,$data_cat))
+                                selected
+                            @endif>{{$categorie->name}}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
                       <label class="col-sm-2 control-label">Name</label>
                       <div class="col-sm-5">
                         <!-- {{-- name:name untuk melempar controller ke database --}} -->

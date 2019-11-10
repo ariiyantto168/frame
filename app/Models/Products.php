@@ -21,4 +21,9 @@ class Products extends Model
     {
         return $this->belongsToMany('App\Models\Categories','productdetail','idproducts','idcategories');
     }
+
+    public function images()
+    {
+        return $this->hasOne('App\Models\Images','idproducts');
+    }
 }

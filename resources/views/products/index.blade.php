@@ -20,11 +20,13 @@
         <thead>
             <tr>
                 <th>No</th>
+                <th>Categories</th>
                 <th>Name</th>
                 <th>Size</th>
                 <th>Weight</th>
                 <th>Color</th>
                 <th>Type</th>
+                <th>Images</th>
                 <th>Description</th>
                 <th></th>
             </tr>
@@ -33,11 +35,24 @@
             @foreach ($products as $index => $product)
             <tr>
                 <td>{{$index+1}}</td>
+                <td>
+                    @foreach ($product->categories as $cat)
+                        {{$cat->name}}
+                    @endforeach
+                </td>
                 <td>{{$product->name}}</td>
                 <td>{{$product->size}}</td>
                 <td>{{$product->weight}}</td>
                 <td>{{$product->color}}</td>
                 <td>{{$product->type}}</td>
+                <td>
+                    {{-- images dapet dr model function --}}
+                      @if (is_null($product->images))
+                        <label> - </label>
+                      @else
+                        <img class="img-rounded zoom" src="{{asset('porducts_images')}}/{{$product->images->name }}" width="50">
+                      @endif
+                  </td>
                 <td>{{$product->description}}</td>
                 <td>
                     <a href="{{url('/products/update/'.$product->idproducts)}}"><i class="fa fa-pencil-square-o"></i></a>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Products;
 use App\Models\Categories;
+use App\Models\Images;
+use Image;
 use Illuminate\Support\Str;
 
 class ProductsController extends Controller
@@ -17,7 +19,7 @@ class ProductsController extends Controller
     public function index()
     {
         $contents = [
-            'products' => Products::with(['categories'])->get(),
+            'products' => Products::with(['categories','images'])->get(),
         ];
 
         $pagecontent = view('products.index', $contents);
@@ -76,6 +78,17 @@ class ProductsController extends Controller
         $saveProducts->save();
         // return $saveProducts;
 
+        //save image 
+        $save_image = new Images;
+        $save_image->idproducts = $saveProducts->idproducts;
+        if ($request->hasFile('images')) {
+            $image = $request->file('images');
+            $re_image = Str::random(20).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(300, 300)->save( public_path('/porducts_images/' . $re_image) );
+            $save_image->name = $re_image;
+        }
+        $save_image->save();
+
         $saveProducts->categories()->attach($request->cat,[
                                             'created_at' =>date('Y-m-d H:i:s')
         ]);
@@ -87,8 +100,19 @@ class ProductsController extends Controller
 
     public function update_page(Products $product)
     {
+        $cat = Categories::all();
+        $product = Products::with(['categories'])
+                    ->where('idproducts',$product->idproducts)
+                    ->first();
+                      
+        $data_cat = [];
+        foreach($product->categories as $categorie){
+            $data_cat[] = $categorie->idcategories;
+        }
         $contents = [
-            'products' => Products::find($product->idproducts)
+            'products' => $product,
+            'categories' => $cat,
+            'data_cat' => $data_cat,
         ];
         // return $contents;
         $pagecontent = view('products.update',$contents);
@@ -125,6 +149,10 @@ class ProductsController extends Controller
         $updateProducts->type = $request->type;
         $updateProducts->description = $request->description;
         $updateProducts->save();
+
+        $updateProducts->categories()->sync($request->cat); 
+        
+        // return $request->all();
         return redirect('products')->with('updated_success','Updated products');
          
     }
