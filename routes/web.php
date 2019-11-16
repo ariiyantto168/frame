@@ -25,6 +25,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users', 'UsersController@index')->name('profile');
 Route::get('/users/create-new', 'UsersController@create_page')->name('create');
 
+// backend
+
+
 // Categories
 Route::get('/categories', 'CategoriesController@index')->name('index');
 Route::get('/categories/create-new', 'CategoriesController@create_page')->name('create_page');
@@ -44,6 +47,16 @@ Route::post('/products/update/{product}', 'ProductsController@update_save')->nam
 Route::delete('/products/delete/{product}', 'ProductsController@delete')->name('delete');
 Route::get('/products/show/{slug}', 'ProductsController@show')->name('create');
 
+// Abouts
+Route::get('/abouts', 'AboutsController@index')->name('index');
+Route::get('/abouts/create-new', 'AboutsController@create_page')->name('create');
+Route::post('/abouts/create-new', 'AboutsController@save_page')->name('create');
+Route::get('/abouts/update/{abouts}', 'AboutsController@update_page')->name('edit');
+Route::post('/abouts/update/{abouts}', 'AboutsController@update_save')->name('edit');
+Route::delete('/abouts/delete/{abouts}', 'AboutsController@delete')->name('delete');
 
-// productuser
-Route::get('/productuser', 'Frontend\ProductuserController@index')->name('index');
+// frontend
+
+// Aboutsme
+Route::get('/aboutme', 'Frontend\AboutsmeController@index')->name('index');
+

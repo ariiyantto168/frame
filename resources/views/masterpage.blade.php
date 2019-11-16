@@ -126,6 +126,7 @@
                   
                 @endif                
                 <li id="menu_products"><a href="{{url('products/')}}"><i class="fa fa-first-order"></i> <span>Products</span></a></li>
+                <li id="menu_abouts"><a href="{{url('abouts/')}}"><i class=""></i> <span>Abouts</span></a></li>
               </ul>
     </section>
     
