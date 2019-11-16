@@ -39,11 +39,7 @@
 						<h4 class="pt-3">Soft Toys</h4>
 					 </div>
 				  </div>
-				  <div class="toys-grids-upper">
-					 <div class="about-toys-off">
-						<h2>Get Up to <span>70% Off </span>On Selected Toys</h2>
-					 </div>
-				  </div>
+				  
 			   </div>
 			</div>
 		 </section>
@@ -394,29 +390,11 @@
 			<div class="container py-lg-5 py-md-5 py-sm-4 py-3">
 			   <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">About Toys</h3>
 			   <div class="about-products-w3layouts">
-				  <p>velit sagittis vehicula. Duis posuere 
-					 ex in mollis iaculis. Suspendisse tincidunt
-					 velit sagittis vehicula. Duis posuere 
-					 velit sagittis vehicula. Duis posuere 
-					 ex in mollis iaculis. Suspendisse tincidunt
-					 velit sagittis vehicula. Duis posuere 
+				  <p class="my-lg-4 my-md-3 my-3">@foreach ($abouts as $about)
+					{{$about->tentangkami}}
+				  @endforeach 
 				  </p>
-				  <p class="my-lg-4 my-md-3 my-3">velit sagittis vehicula. Duis posuere 
-					 ex in mollis iaculis. Suspendisse tincidunt
-					 velit sagittis vehicula. Duis posuere 
-					 ex in mollis iaculis. Suspendisse tincidunt
-					 velit sagittis vehicula. Duis posuere 
-					 velit sagittis vehicula. Duis posuere 
-					 ex in mollis iaculis. Suspendisse tincidunt
-					 velit sagittis vehicula. Duis posuere 
-				  </p>
-				  <p>velit sagittis vehicula. Duis posuere 
-					 ex in mollis iaculis. Suspendisse tincidunt
-					 velit sagittis vehicula. Duis posuere 
-					 velit sagittis vehicula. Duis posuere 
-					 ex in mollis iaculis. Suspendisse tincidunt
-					 velit sagittis vehicula. Duis posuere 
-				  </p>
+				  
 			   </div>
 			</div>
 		 </section>

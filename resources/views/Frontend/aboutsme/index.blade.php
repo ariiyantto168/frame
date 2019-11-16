@@ -26,12 +26,9 @@
                <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">About Us</h3>
                <div class="about-innergrid-agile text-center">
                   <h4>Welcome To Our Store</h4>
-                  <p class="mb-3"> velit sagittis vehicula. Duis posuere 
-                     ex in mollis iaculis. Suspendisse tincidunt
-                     velit sagittis vehicula. Duis posuere 
-                     velit sagittis vehicula. Duis posuere
-                     ex in mollis iaculis. Suspendisse tincidunt
-                     velit sagittis vehicula. Duis posuere 
+                  <p class="mb-3"> @foreach ($abouts as $about)
+                      {{$about->tentang}}
+                  @endforeach
                   </p>
                   <div class=" img-toy-w3l-top">
                   </div>

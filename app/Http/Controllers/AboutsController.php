@@ -51,7 +51,6 @@ class AboutsController extends Controller
             'nomortelepon' => 'required',
             'whatsapp' => 'required',
             'email' => 'required',
-            'alamat' => 'required',
         ]);
 
         $saveAbouts = new Abouts;
@@ -59,6 +58,8 @@ class AboutsController extends Controller
         $saveAbouts->whatsapp = $request->whatsapp;
         $saveAbouts->email = $request->email;
         $saveAbouts->alamat = $request->alamat;
+        $saveAbouts->tentang = $request->tentang;
+        $saveAbouts->tentangkami = $request->tentangkami;
         $saveAbouts->save(); 
 
         return redirect('abouts')->with('status_success','Created Abouts');
@@ -93,7 +94,6 @@ class AboutsController extends Controller
             'nomortelepon' => 'required',
             'whatsapp' => 'required',
             'email' => 'required',
-            'alamat' => 'required',
         ]);
 
         $saveAbouts = Abouts::find($abouts->idabouts);
@@ -101,6 +101,8 @@ class AboutsController extends Controller
         $saveAbouts->whatsapp = $request->whatsapp;
         $saveAbouts->email = $request->email;
         $saveAbouts->alamat = $request->alamat;
+        $saveAbouts->tentang = $request->tentang;
+        $saveAbouts->tentangkami = $request->tentangkami;
         $saveAbouts->save(); 
 
         return redirect('abouts')->with('status_success','Update Abouts');

@@ -19,6 +19,8 @@ class CreateAboutsTable extends Migration
             $table->string('whatsapp');
             $table->string('email');
             $table->text('alamat')->nullable();
+            $table->text('tentang')->nullable();
+            $table->text('tentangkami')->nullable();
             $table->timestamps();
         });
     }

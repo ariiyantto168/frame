@@ -24,6 +24,8 @@
                 <th>whatsapp</th>
                 <th>email</th>
                 <th>alamat</th>
+                <th>tentang</th>
+                <th>tentang Kami</th>
                 <th></th>
             </tr>
         </thead>
@@ -34,6 +36,8 @@
                 <td>{{$about->whatsapp}}</td>
                 <td>{{$about->email}}</td>
                 <td>{{$about->alamat}}</td>
+                <td>{{$about->tentang}}</td>
+                <td>{{$about->tentangkami}}</td>
                 <td>
                     <center>
                         <a href="{{url('/abouts/update/'.$about->idabouts)}}"><i class="fa fa-pencil-square-o"></i></a>

@@ -41,6 +41,19 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Tentang</label>
+                  <div class="col-sm-5">
+                      <textarea name="tentang" rows="3" id="tentang" class="form-control" required></textarea>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Tentang Kami</label>
+                <div class="col-sm-5">
+                    <textarea name="tentangkami" rows="3" id="tentangkami" class="form-control" required></textarea>
+                </div>
+            </div>
                 <hr>
                 <div class="form-group">
                   <label class="col-sm-2 control-label"></label>
