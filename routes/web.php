@@ -20,6 +20,8 @@ Route::get('/', 'Frontend\HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/all/{name}', 'Frontend\HomeController@show')->name('show');
+Route::get('/home/detail/{slug}', 'Frontend\HomeController@detail')->name('detail');
 
 // users
 Route::get('/users', 'UsersController@index')->name('profile');
