@@ -18,7 +18,7 @@
 		 <!--new Arrivals -->
 		 <section class="blog py-lg-4 py-md-3 py-sm-3 py-3">
 			<div class="container py-lg-5 py-md-4 py-sm-4 py-3">
-			   <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">New Arrivals</h3>
+			   <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Premium products</h3>
 			   <div class="slid-img">
 				  <ul id="flexiselDemo1">
 					 <li>
@@ -258,7 +258,7 @@
 		 <!-- Product-view -->
 		 <section class="product py-lg-4 py-md-3 py-sm-3 py-3">
 			<div class="container py-lg-5 py-md-5 py-sm-4 py-3">
-			   <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Latest Toys</h3>
+			   <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">The best products</h3>
 			   <div class=" img-toy-w3l-top">
 			   </div>
 			   <div class="mt-lg-4 mt-3 product-info-img">

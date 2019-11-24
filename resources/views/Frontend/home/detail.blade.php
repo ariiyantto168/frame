@@ -60,8 +60,8 @@
          <!--/shop-->
          <section class="banner-bottom py-lg-5 py-3">
             <div class="container">
-                @foreach ($details as $detail)
-                    
+                
+               {{ Form::open(array('url' => 'home/detail/'.$detail->slug, 'class' => 'form-horizontal','files' => 'true')) }}                    
                 
                <div class="inner-sec-shop pt-lg-4 pt-3">
                   <div class="row">
@@ -70,7 +70,7 @@
                            <div class="flexslider1">
                               <ul class="slides">
                                  <li data-thumb="images/f2.jpg">
-                                    <div class="thumb-image"> <img src="images/f2.jpg" data-imagezoom="true" class="img-fluid" alt=" "> </div>
+                                    <div class="thumb-image"> <img src="@if(!is_null($detail->images)){{asset('porducts_images')}}/{{$detail->images->name }}@endif" data-imagezoom="true" class="img-fluid" alt=" "> </div>
                                  </li>
                               </ul>
                               <div class="clearfix"></div>
@@ -78,50 +78,26 @@
                         </div>
                      </div>
                      <div class="col-lg-8 single-right-left simpleCart_shelfItem">
-                        <h3>Soft Teddy Bear (Brown)</h3>
-                        <p><span class="item_price">$650</span>
-                           <del>$1,199</del>
+                        <h3>{{$detail->name}}</h3>
+                        <p><span class="item_price">{{$detail->color}}</span>
                         </p>
-                        <div class="rating1">
-                           <ul class="stars">
-                              <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                              <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-                           </ul>
-                        </div>
-                        <div class="description">
-                           <h5>Check delivery, payment options and charges at your location</h5>
-                           <form action="#" method="post">
-                              <input class="form-control" type="text" name="Email" placeholder="Please enter..." required="">
-                              <input type="submit" value="Check">
-                           </form>
-                        </div>
                         <div class="color-quality">
                            <div class="color-quality-right">
                               <h5>Size :</h5>
                               <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
-                                 <option value="null">2 Feet</option>
-                                 <option value="null">3 Feet</option>
-                                 <option value="null">4 Feet</option>
-                                 <option value="null">5 Feet</option>
+                              <option value="null">{{$detail->size}}</option>
                               </select>
                            </div>
                         </div>
                         <div class="occasional">
                            <h5>Types :</h5>
                            <div class="colr ert">
-                              <label class="radio"><input type="radio" name="radio" checked=""><i></i> Soft Teddy Bear (Black)</label>
-                           </div>
-                           <div class="colr">
-                              <label class="radio"><input type="radio" name="radio"><i></i>Soft Teddy Bear (Brown)</label>
-                           </div>
-                           <div class="colr">
-                              <label class="radio"><input type="radio" name="radio"><i></i>Pink Teddy Bear (Pink)</label>
+                           <label class="radio"><input type="radio" name="radio" checked=""><i></i>{{$detail->type}}</label>
                            </div>
                            <div class="clearfix"> </div>
                         </div>
+
+                        {{-- ganti pake whatsapp --}}
                         <div class="occasion-cart">
                            <div class="toys single-item singlepage">
                               <form action="#" method="post">
@@ -168,19 +144,13 @@
                      <!--/tabs-->
                      <div class="responsive_tabs">
                         <div id="horizontalTab">
-                           <ul class="resp-tabs-list">
-                              <li>Description</li>
-                           </ul>
                            <div class="resp-tabs-container">
                               <!--/tab_one-->
                               <div class="tab1">
                                  <div class="single_page">
-                                    <h6>Lorem ipsum dolor sit amet</h6>
+                                    <h6>Description</h6>
                                     </p>
-                                    <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget nisl ullamcorper, molestie
-                                       blandit ipsum auctor. Mauris volutpat augue dolor.Consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                                       ut lab ore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. labore et dolore
-                                       magna aliqua.
+                                    <p class="para">{{$detail->description}}
                                     </p>
                                  </div>
                               </div>
@@ -191,7 +161,7 @@
                      <!--//tabs-->
                   </div>
                </div>
-               @endforeach
+               {{Form::close()}}
             </div>
          </section>
          <!--//subscribe-->

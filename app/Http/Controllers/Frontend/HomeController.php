@@ -67,7 +67,7 @@ class HomeController extends Controller
         // return $detail;
 
         $contents = [
-            'details' => $detail,
+            'detail' => $detail,
         ];
 
         // return $contents;
