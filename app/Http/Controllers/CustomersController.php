@@ -74,6 +74,6 @@ class CustomersController extends Controller
 
     public function update_page(Customers $customer)
     {
-        return $customer;
+        // return $customer;
     }
 }

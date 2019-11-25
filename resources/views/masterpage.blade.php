@@ -128,6 +128,7 @@
                 <li id="menu_products"><a href="{{url('products/')}}"><i class="fa fa-first-order"></i> <span>Products</span></a></li>
                 <li id="menu_abouts"><a href="{{url('abouts/')}}"><i class=""></i> <span>Abouts</span></a></li>
                 <li id="menu_customers"><a href="{{url('customers/')}}"><i class=""></i> <span>Customer</span></a></li>
+                <li id="menu_bestproducts"><a href="{{url('bestproducts/')}}"><i class=""></i> <span>Best Products</span></a></li>
               </ul>
     </section>
     

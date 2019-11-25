@@ -64,8 +64,13 @@ Route::get('/customers/create-new', 'CustomersController@create_page')->name('cr
 Route::post('/customers/create-new', 'CustomersController@save_page')->name('create');
 Route::get('/customers/update/{customer}', 'CustomersController@update_page')->name('edit');
 
+// best products
+Route::get('/bestproducts', 'BestproductsController@index')->name('index');
+Route::get('/bestproducts/create-new', 'BestproductsController@create_page')->name('create');
+
 // frontend
 
 // Aboutsme
 Route::get('/aboutme', 'Frontend\AboutsmeController@index')->name('index');
+
 
