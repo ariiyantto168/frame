@@ -68,6 +68,7 @@ class AboutsController extends Controller
 
     public function update_page(Abouts $abouts)
     {
+        // return $abouts;
         $contents = [
             'abouts' => Abouts::find($abouts->idabouts)
         ];

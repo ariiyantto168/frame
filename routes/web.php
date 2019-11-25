@@ -57,6 +57,13 @@ Route::get('/abouts/update/{abouts}', 'AboutsController@update_page')->name('edi
 Route::post('/abouts/update/{abouts}', 'AboutsController@update_save')->name('edit');
 Route::delete('/abouts/delete/{abouts}', 'AboutsController@delete')->name('delete');
 
+
+// customer
+Route::get('/customers', 'CustomersController@index')->name('index');
+Route::get('/customers/create-new', 'CustomersController@create_page')->name('create');
+Route::post('/customers/create-new', 'CustomersController@save_page')->name('create');
+Route::get('/customers/update/{customer}', 'CustomersController@update_page')->name('edit');
+
 // frontend
 
 // Aboutsme
