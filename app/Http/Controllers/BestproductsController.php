@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Bestproducts;
 use Illuminate\Support\Str;
+use Image;
+use File;
 
 
 class BestproductsController extends Controller
@@ -19,7 +21,7 @@ class BestproductsController extends Controller
 
         $pagemain = array(
             'title' => 'bestproducts',
-            'menu' => 'bestproducts',
+            'menu' => 'bestpro  ducts',
             'submenu' => '',
             'pagecontent' => $pagecontent
         );
@@ -58,9 +60,16 @@ class BestproductsController extends Controller
         $saveBproducts = new Bestproducts;
         $saveBproducts->name = $request->name;
         $saveBproducts->slug = $slug = Str::slug($request->name, '-');
-        $saveBproducts->description = $request->description;
-        $saveBproducts->save();  
-        // return $saveBproducts; 
+        $saveBproducts->description = $request->description; 
+        // return $saveBproducts;
+        if ($request->hasFile('images')) {
+            $image = $request->file('images');
+            $re_image = Str::random(20).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(300, 300)->save( public_path('/porducts_images/' . $re_image) );
+            $saveBproducts->images = $re_image;
+        }
+        $saveBproducts->save(); 
+        // return $saveBproducts;
         return redirect('bestproducts')->with('status_success','Created Best Products');
     }
 
@@ -97,8 +106,20 @@ class BestproductsController extends Controller
         $saveBproducts->name = $request->name;
         $saveBproducts->slug = $slug = Str::slug($request->name, '-');
         $saveBproducts->description = $request->description;
+
+        $image_old =  public_path('/porducts_images/' . $saveBproducts->images);
+        if ($request->hasFile('images')) {
+            if (File::exists($image_old)) {
+            $image = $request->file('images');
+            $re_image = Str::random(20).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(300, 300)->save( public_path('/porducts_images/' . $re_image) );
+            $saveBproducts->images = $re_image;
+            }
+            File::delete($image_old);
+        }
+
         $saveBproducts->save(); 
-        // return $savePremium; 
-        return redirect('premiums')->with('status_success','Updated Best best products');
+        // return $saveBproducts; 
+        return redirect('bestproducts')->with('status_success','Updated Best best products');
     }
 }

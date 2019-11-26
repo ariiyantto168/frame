@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Premiums;
 use Illuminate\Support\Str;
+use Image;
+use File;
 
 class PremiumsController extends Controller
 {
@@ -57,6 +59,13 @@ class PremiumsController extends Controller
         $savePremium = new Premiums;
         $savePremium->name = $request->name;
         $savePremium->slug = $slug = Str::slug($request->name, '-');
+        // return $savePremium;
+        if ($request->hasFile('images')) {
+            $image = $request->file('images');
+            $re_image = Str::random(20).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(300, 300)->save( public_path('/porducts_images/' . $re_image) );
+            $savePremium->images = $re_image;
+        }
         $savePremium->description = $request->description;
         $savePremium->save();  
         // return $savePremium; 
@@ -96,8 +105,20 @@ class PremiumsController extends Controller
         $savePremium->name = $request->name;
         $savePremium->slug = $slug = Str::slug($request->name, '-');
         $savePremium->description = $request->description;
+
+        $image_old =  public_path('/porducts_images/' . $savePremium->images);
+        if ($request->hasFile('images')) {
+            if (File::exists($image_old)) {
+            $image = $request->file('images');
+            $re_image = Str::random(20).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(300, 300)->save( public_path('/porducts_images/' . $re_image) );
+            $savePremium->images = $re_image;
+            }
+            File::delete($image_old);
+        }
+
         $savePremium->save();  
         // return $savePremium; 
-        return redirect('premiums')->with('status_success','Updated Best Premium products');
+        return redirect('premiums')->with('status_success','Updated Premium products');
     }
 }

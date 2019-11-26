@@ -12,6 +12,6 @@ class Premiums extends Model
     protected $primaryKey = 'idpremiums';
 
     protected $fillable = [
-        'slug','name','description',
+        'slug','name','images','description',
     ];
 }

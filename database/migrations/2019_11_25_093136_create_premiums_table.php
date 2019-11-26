@@ -17,6 +17,7 @@ class CreatePremiumsTable extends Migration
             $table->increments('idpremiums');
             $table->string('slug');
             $table->string('name');
+            $table->string('images');
             $table->text('description');
             $table->timestamps();
         });

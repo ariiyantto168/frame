@@ -17,6 +17,7 @@ class CreateBestProductsTable extends Migration
             $table->increments('idbestproducts');
             $table->string('slug');
             $table->string('name');
+            $table->string('images');
             $table->text('description');
             $table->timestamps();
         });

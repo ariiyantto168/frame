@@ -21,6 +21,7 @@
             <tr>
                 <th>No</th>
                 <th>Name</th>
+                <th>Images</th>
                 <th>description</th>
                 <th></th>
             </tr>
@@ -30,6 +31,13 @@
                 <tr>
                     <td>{{$jancuk1+1}}</td>
                     <td>{{$premium->name}}</td>
+                    <td>
+                        @if (is_null($premium->images))
+                          <label> - </label>
+                        @else
+                          <img class="img-rounded zoom" src="{{asset('porducts_images')}}/{{$premium->images }}" width="100">
+                        @endif
+                      </td>
                     <td>{{$premium->description}}</td>
                     <td>
                         <center>
