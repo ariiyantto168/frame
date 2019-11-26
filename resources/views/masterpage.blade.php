@@ -129,6 +129,7 @@
                 <li id="menu_abouts"><a href="{{url('abouts/')}}"><i class=""></i> <span>Abouts</span></a></li>
                 <li id="menu_customers"><a href="{{url('customers/')}}"><i class=""></i> <span>Customer</span></a></li>
                 <li id="menu_bestproducts"><a href="{{url('bestproducts/')}}"><i class=""></i> <span>Best Products</span></a></li>
+                <li id="menu_premiums"><a href="{{url('premiums/')}}"><i class=""></i> <span>Premiums Products</span></a></li>
               </ul>
     </section>
     

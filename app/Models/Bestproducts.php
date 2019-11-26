@@ -12,6 +12,6 @@ class Bestproducts extends Model
     protected $primaryKey = 'idbestproducts';
 
     protected $fillable = [
-        'slug','name','images_best','description',
+        'slug','name','description',
     ];
 }

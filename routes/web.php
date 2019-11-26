@@ -67,6 +67,16 @@ Route::get('/customers/update/{customer}', 'CustomersController@update_page')->n
 // best products
 Route::get('/bestproducts', 'BestproductsController@index')->name('index');
 Route::get('/bestproducts/create-new', 'BestproductsController@create_page')->name('create');
+Route::post('/bestproducts/create-new', 'BestproductsController@save_page')->name('create');
+Route::get('/bestproducts/update/{bestproduct}', 'BestproductsController@update_page')->name('edit');
+Route::post('/bestproducts/update/{bestproduct}', 'BestproductsController@update_save')->name('edit');
+
+// Premiums Products
+Route::get('/premiums', 'PremiumsController@index')->name('index');
+Route::get('/premiums/create-new', 'PremiumsController@create_page')->name('create');
+Route::post('/premiums/create-new', 'PremiumsController@save_page')->name('create');
+Route::get('/premiums/update/{premium}', 'PremiumsController@update_page')->name('edit');
+Route::post('/premiums/update/{premium}', 'PremiumsController@update_save')->name('edit');
 
 // frontend
 
