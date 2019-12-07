@@ -66,6 +66,8 @@ class PremiumsController extends Controller
             Image::make($image)->resize(300, 300)->save( public_path('/porducts_images/' . $re_image) );
             $savePremium->images = $re_image;
         }
+        $savePremium->jenis = $request->jenis;
+        $savePremium->type = $request->type;
         $savePremium->description = $request->description;
         $savePremium->save();  
         // return $savePremium; 
@@ -105,6 +107,8 @@ class PremiumsController extends Controller
         $savePremium->name = $request->name;
         $savePremium->slug = $slug = Str::slug($request->name, '-');
         $savePremium->description = $request->description;
+        $savePremium->jenis = $request->jenis;
+        $savePremium->type = $request->type;
 
         $image_old =  public_path('/porducts_images/' . $savePremium->images);
         if ($request->hasFile('images')) {

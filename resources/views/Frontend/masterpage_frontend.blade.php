@@ -64,7 +64,7 @@
 			   <div class="container-fluid">
 				  <div class="hedder-up row">
 					 <div class="col-lg-3 col-md-3 logo-head">
-						<h1><a class="navbar-brand" href="index.html">Toys-Shop</a></h1>
+						<h1><a class="navbar-brand" href="index.html">CV. Indotehnik</a></h1>
 					 </div>
 					 <div class="col-lg-5 col-md-6 search-right">
 						<form class="form-inline my-lg-0">
@@ -123,15 +123,9 @@
 						   </div>
 						</li>
 						<li class="nav-item dropdown">
-						   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						   <a class="nav-link dropdown-toggle" href="{{url('')}}" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						   Product
 						   </a>
-						   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							  <a class="nav-link" href="product.html">Kids Toys</a>
-							  <a class="nav-link " href="product.html">Dolls</a>
-							  <a class="nav-link " href="product.html">Key Toys</a>
-							  <a class="nav-link " href="product.html">Boys Toys</a>
-						   </div>
 						</li>
 						<li class="nav-item">
 						   <a href="contact.html" class="nav-link">Contact</a>

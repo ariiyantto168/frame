@@ -21,6 +21,8 @@
             <tr>
                 <th>No</th>
                 <th>Name</th>
+                <th>jenis</th>
+                <th>type</th>
                 <th>Images</th>
                 <th>description</th>
                 <th></th>
@@ -31,6 +33,8 @@
                 <tr>
                     <td>{{$jancuk1+1}}</td>
                     <td>{{$premium->name}}</td>
+                    <td>{{$premium->jenis}}</td>
+                    <td>{{$premium->type}}</td>
                     <td>
                         @if (is_null($premium->images))
                           <label> - </label>

@@ -18,6 +18,8 @@ class CreatePremiumsTable extends Migration
             $table->string('slug');
             $table->string('name');
             $table->string('images');
+            $table->string('jenis');
+            $table->string('type');
             $table->text('description');
             $table->timestamps();
         });

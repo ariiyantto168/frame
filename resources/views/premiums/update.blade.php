@@ -42,6 +42,23 @@
                   </div>
               </div>
 
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Jenis</label>
+                  <div class="col-sm-5">
+                    <!-- {{-- name:name untuk melempar controller ke database --}} -->
+                  <input type="text" class="form-control" value="{{$premiums->jenis}}" name="jenis" required>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Type</label>
+                  <div class="col-sm-5">
+                    <!-- {{-- name:name untuk melempar controller ke database --}} -->
+                  <input type="text" class="form-control" value="{{$premiums->type}}" name="type" required>
+                  </div>
+              </div>
+
+
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Description</label>
                     <div class="col-sm-5">

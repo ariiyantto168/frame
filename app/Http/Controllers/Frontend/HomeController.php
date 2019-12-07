@@ -8,6 +8,9 @@ use App\Models\Abouts;
 use App\Models\Categories;
 use App\Models\Products;
 use App\Models\Images;
+use App\Models\Customers;
+use App\Models\Premiums;
+use App\Models\Bestproducts;
 
 class HomeController extends Controller
 {
@@ -15,10 +18,16 @@ class HomeController extends Controller
     {
         $about = Abouts::all();
         $cat = Categories::all();
+        $cust = Customers::all();
+        $prem = Premiums::all();
+        $best = Bestproducts::all();
         $contents = [
             'products' => Products::with(['categories','images'])->get(), 
             'abouts' => $about,
             'categories' => $cat,
+            'customers' => $cust,
+            'premiums' => $prem,
+            'bestproducts' => $best,
         ];
         $pagecontent = view('Frontend.home.index', $contents);
 
@@ -83,5 +92,27 @@ class HomeController extends Controller
         
         return view('Frontend.masterpage_frontend', $pagemain);
 
+    }
+
+    public function premdetail($slug)
+    {
+        // return $slug;
+        $prem = Premiums::where('slug',$slug)->first();
+        // return $prem;
+
+        $contents = [
+            'premium' => $prem,
+        ];
+        // return $contents;
+
+        $pagecontent = view('Frontend.home.premdetail', $contents);
+
+        // return $pagecontent;
+        $pagemain = array(
+            'title' => 'Detail Products',
+            'pagecontent' => $pagecontent
+        );
+        
+        return view('Frontend.masterpage_frontend', $pagemain);
     }
 }

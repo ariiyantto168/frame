@@ -19,9 +19,14 @@ Route::get('/', 'Frontend\HomeController@index');
 
 Auth::routes();
 
+// Aboutsme
+Route::get('/aboutme', 'Frontend\AboutsmeController@index')->name('index');
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/all/{name}', 'Frontend\HomeController@show')->name('show');
 Route::get('/home/detail/{slug}', 'Frontend\HomeController@detail')->name('detail');
+Route::get('/home/premdetail/{slug}', 'Frontend\HomeController@premdetail')->name('detail');
 
 // users
 Route::get('/users', 'UsersController@index')->name('profile');
@@ -78,9 +83,7 @@ Route::post('/premiums/create-new', 'PremiumsController@save_page')->name('creat
 Route::get('/premiums/update/{premium}', 'PremiumsController@update_page')->name('edit');
 Route::post('/premiums/update/{premium}', 'PremiumsController@update_save')->name('edit');
 
-// frontend
 
-// Aboutsme
-Route::get('/aboutme', 'Frontend\AboutsmeController@index')->name('index');
+
 
 

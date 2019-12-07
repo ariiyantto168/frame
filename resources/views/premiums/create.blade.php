@@ -40,7 +40,22 @@
                     <img class="img-rounded zoom" id="img-upload" width="50">
                   </div>
               </div>
+
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Jenis</label>
+                  <div class="col-sm-5">
+                    <!-- {{-- name:name untuk melempar controller ke database --}} -->
+                    <input type="text" class="form-control" placeholder="jenis" name="jenis" required>
+                  </div>
+              </div>
          
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Type</label>
+                  <div class="col-sm-5">
+                    <!-- {{-- name:name untuk melempar controller ke database --}} -->
+                    <input type="text" class="form-control" placeholder="type" name="type" required>
+                  </div>
+              </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Description</label>
