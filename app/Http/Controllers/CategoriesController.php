@@ -6,6 +6,9 @@ use Auth;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Image;
+use File;
+
 
 class CategoriesController extends Controller
 {
@@ -62,7 +65,14 @@ class CategoriesController extends Controller
         $saveCategories = new Categories;
         $saveCategories->name = $request->name;
         $saveCategories->slug = $slug = Str::slug($request->name, '-');
+        if ($request->hasFile('images')) {
+            $image = $request->file('images');
+            $re_image = Str::random(20).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(300, 300)->save( public_path('/porducts_images/' . $re_image) );
+            $saveCategories->images = $re_image;
+        }
         $saveCategories->save();
+        // return $saveCategories;
         return redirect('categories')->with('status_success','Created categories');
     }
 

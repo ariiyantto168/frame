@@ -123,12 +123,12 @@
 						   </div>
 						</li>
 						<li class="nav-item dropdown">
-						   <a class="nav-link dropdown-toggle" href="{{url('')}}" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						   <a class="nav-link dropdown-toggle" href="{{url('home/all/')}}" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						   Product
 						   </a>
 						</li>
 						<li class="nav-item">
-						   <a href="contact.html" class="nav-link">Contact</a>
+						   <a href="{{url('/home/all/')}}" class="nav-link">Contact</a>
 						</li>
 					 </ul>
 				  </div>

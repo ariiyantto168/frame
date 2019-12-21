@@ -23,7 +23,7 @@
                 <h3 class="box-title">Create New</h3> 
               </div>
               <div class="box-body">
-                {{ Form::open(array('url' => 'categories/create-new', 'class' => 'form-horizontal')) }}
+                {{ Form::open(array('url' => 'categories/create-new', 'class' => 'form-horizontal','files' => 'true')) }}
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Name</label>
                   <div class="col-sm-10">
@@ -31,6 +31,15 @@
                     <input type="text" class="form-control" placeholder="Name" name="name" required>
                   </div>
                 </div>
+
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Images<span class="required">*</span>
+                  </label>
+                  <div class="col-sm-5">
+                    <input type="file" id="images" name="images" class="form-control col-md-7 col-xs-12">
+                    <img class="img-rounded zoom" id="img-upload" width="50">
+                  </div>
+              </div>
 
                 <hr>
                 <div class="form-group">

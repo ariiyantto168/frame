@@ -22,6 +22,7 @@
                 <tr>
                     <th>No</th>
                     <th>Name</th>
+                    <th>images</th>
                     <th></th>
                 </tr>
             </thead>
@@ -30,6 +31,13 @@
                     <tr>
                         <td>{{$jancuk1+1}}</td>
                         <td>{{$categorie->name}}</td>
+                        <td>
+                            @if (is_null($categorie->images))
+                              <label> - </label>
+                            @else
+                              <img class="img-rounded zoom" src="{{asset('porducts_images')}}/{{$categorie->images }}" width="100">
+                            @endif
+                          </td>
                         <td>
                             <center>
                                 <a href="{{url('/categories/update/'.$categorie->idcategories)}}"><i class="fa fa-pencil-square-o"></i></a>

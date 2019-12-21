@@ -15,7 +15,7 @@ class Categories extends Model
     protected $primaryKey = 'idcategories';
 
     protected $fillable = [
-        'name',
+        'name','images',
     ];
 
     public function products()
