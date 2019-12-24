@@ -26,7 +26,7 @@
                 {{ Form::open(array('url' => 'categories/create-new', 'class' => 'form-horizontal','files' => 'true')) }}
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Name</label>
-                  <div class="col-sm-10">
+                  <div class="col-sm-5">
                     <!-- {{-- name:name untuk melempar controller ke database --}} -->
                     <input type="text" class="form-control" placeholder="Name" name="name" required>
                   </div>
